@@ -1,5 +1,3 @@
-package ru.job4j;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

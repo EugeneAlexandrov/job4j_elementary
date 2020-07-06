@@ -1,6 +1,4 @@
-package ru.job4j.ru.job4j.converter;
-
-import java.math.RoundingMode;
+package ru.job4j.converter;
 
 public class Converter {
     public static float rubleToEuro(int value) {
