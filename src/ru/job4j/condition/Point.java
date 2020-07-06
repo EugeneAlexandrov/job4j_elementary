@@ -8,7 +8,7 @@ public class Point {
         result = Point.distance(1, 5, 1, 10);
         System.out.println("result (1, 5) to (1, 10) =" + result);
 
-        result = Point.distance(1, 1, 3, 3);
+        result = Point.distance(1, 1, 4, 4);
         System.out.printf("result (1, 1) to (3, 3) = %3.2f\n", result);
     }
 
