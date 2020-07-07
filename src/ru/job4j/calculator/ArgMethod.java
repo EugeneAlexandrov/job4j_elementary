@@ -2,13 +2,15 @@ package ru.job4j.calculator;
 
 public class ArgMethod {
     public static void hello(String name, int age) {
-        System.out.println("Hello, " + name+ ", "+age+" years");
+        System.out.println("Hello, " + name + ", " + age + " years");
     }
+
     public static void hello() {
-        System.out.println("Hello, anonymous" );
+        System.out.println("Hello, anonymous");
     }
+
     public static void hello(int age) {
-        System.out.println("Hello,"+age+" years anonymous" );
+        System.out.println("Hello," + age + " years anonymous");
     }
 
     public static void main(String[] args) {
