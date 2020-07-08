@@ -20,25 +20,4 @@ public class EqLastTest {
         int[] right = {3, 3, 4};
         assertThat(check(left, right), is(false));
     }
-
-    @Test
-    public void whenZeroArray() {
-        int[] left = {};
-        int[] right = {};
-        assertThat(check(left, right), is(false));
-    }
-
-    @Test
-    public void whenZeroArray1() {
-        int[] left = {1, 3};
-        int[] right = {};
-        assertThat(check(left, right), is(false));
-    }
-
-    @Test
-    public void whenZeroArray2() {
-        int[] left = {};
-        int[] right = {2, 3};
-        assertThat(check(left, right), is(false));
-    }
 }
