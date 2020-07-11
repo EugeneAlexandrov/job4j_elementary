@@ -1,6 +1,11 @@
 package ru.job4j.array;
 
 public class Merge {
+    /**
+     * @param left  first array
+     * @param right second array
+     * @return third sorted array
+     */
     public static int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
         int keyLeft = 0;

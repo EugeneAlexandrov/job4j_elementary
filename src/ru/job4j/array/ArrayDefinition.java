@@ -10,10 +10,8 @@ public class ArrayDefinition {
         names[1] = "Alex Turner";
         names[2] = "Nick Lane";
         names[3] = "Nick Cave";
-
         for (String name : names) {
             System.out.println(name);
         }
-
     }
 }
