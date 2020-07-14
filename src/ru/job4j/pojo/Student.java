@@ -28,4 +28,9 @@ public class Student {
     public void setReceiptDate(String receiptDate) {
         this.receiptDate = receiptDate;
     }
+
+    @Override
+    public String toString() {
+        return "Student : " + name + " was credited at " + receiptDate + " into the group " + group;
+    }
 }
