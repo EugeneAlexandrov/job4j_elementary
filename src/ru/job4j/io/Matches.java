@@ -8,8 +8,8 @@ public class Matches {
         int player = 0;
         int match = 11;
         while (match > 0) {
-            System.out.printf("На столе %d спичек\n", match);
-            System.out.printf("Ходит %d игрок! Сколько спичек возьмете? Ответ:\n", (player++ % 2) + 1);
+            System.out.printf("На столе %d спичек%n", match);
+            System.out.printf("Ходит %d игрок! Сколько спичек возьмете? Ответ:", (player++ % 2) + 1);
             int answer = Integer.valueOf(input.nextLine().trim());
             match -= answer;
         }
