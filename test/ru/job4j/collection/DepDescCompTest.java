@@ -24,4 +24,13 @@ public class DepDescCompTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
+    @Test
+    public void whenDifferentDepartment() {
+        int rsl = new DepDescComp().compare(
+                "K1",
+                "K2/SK1"
+        );
+        assertThat(rsl, greaterThan(0));
+    }
 }
