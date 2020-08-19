@@ -16,7 +16,8 @@ public class ProfilesTest {
         profiles = List.of(
                 new Profile("User1", new Address("Moscow", "Smolnaya", 15, 15)),
                 new Profile("User2", new Address("Saint-Petersburg", "Nevskyi prospect", 10, 4)),
-                new Profile("User3", new Address("Astrakhan", "Vlasova", 4, 35))
+                new Profile("User3", new Address("Astrakhan", "Vlasova", 4, 35)),
+                new Profile("User4", new Address("Saint-Petersburg", "Nevskyi prospect", 10, 4))
         );
     }
 
@@ -24,9 +25,9 @@ public class ProfilesTest {
     public void testCollect() {
         List<Address> rsl = Profiles.collect(profiles);
         List<Address> expected = List.of(
+                new Address("Astrakhan", "Vlasova", 4, 35),
                 new Address("Moscow", "Smolnaya", 15, 15),
-                new Address("Saint-Petersburg", "Nevskyi prospect", 10, 4),
-                new Address("Astrakhan", "Vlasova", 4, 35)
+                new Address("Saint-Petersburg", "Nevskyi prospect", 10, 4)
         );
         assertEquals(rsl, expected);
     }
