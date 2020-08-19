@@ -1,15 +1,28 @@
 package ru.job4j.stream;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StreamUsage {
+    public static class Task {
+        private final String name;
+        private final long spent;
+
+        public Task(String name, long spent) {
+            this.name = name;
+            this.spent = spent;
+        }
+    }
+
     public static void main(String[] args) {
-        List<Integer> tasks = List.of(-1, 5, 6, 8, 0, -10, -500, 500, 60
+        List<Task> tasks = List.of(
+                new Task("Bug #1", 10),
+                new Task("Task #2", 20),
+                new Task("Bug #3", 40)
         );
-        List<Integer> positive = tasks.stream().filter(
-                i -> i > 0
-        ).collect(Collectors.toList());
-        positive.forEach(System.out::println);
+        tasks.stream()
+                .filter(task -> task.name.contains("Bug"))
+                .filter(task -> task.spent > 30)
+                .map(task -> task.name + " " + task.spent)
+                .forEach(System.out::println);
     }
 }
