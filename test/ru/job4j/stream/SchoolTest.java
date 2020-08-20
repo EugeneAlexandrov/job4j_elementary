@@ -58,18 +58,4 @@ public class SchoolTest {
         );
         assertEquals(classA, expected);
     }
-
-    @Test
-    public void collectToMapTest() {
-        Map<String, Student> studentMap = list.stream()
-                .collect(Collectors.toMap(
-                        Student::getSurname,
-                        x -> x
-                ));
-        Map<String, Student> expected = new HashMap<>();
-        for (Student student : list) {
-            expected.put(student.getSurname(), student);
-        }
-        assertEquals(studentMap, expected);
-    }
 }
