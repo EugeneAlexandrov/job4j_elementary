@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class StudentTest {
+public class SchoolTest {
 
     List<Student> list;
 
@@ -29,7 +29,7 @@ public class StudentTest {
 
     @Test
     public void collectClassA() {
-        List<Student> classA = Student.collect(list, (x) -> x.getScore() >= 70);
+        List<Student> classA = School.collect(list, (x) -> x.getScore() >= 70);
         List<Student> expected = List.of(
                 new Student("Ivanov", 80),
                 new Student("Sidorov", 70),
@@ -40,7 +40,7 @@ public class StudentTest {
 
     @Test
     public void collectClassB() {
-        List<Student> classA = Student.collect(list, (x) -> x.getScore() >= 50 && x.getScore() < 70);
+        List<Student> classA = School.collect(list, (x) -> x.getScore() >= 50 && x.getScore() < 70);
         List<Student> expected = List.of(
                 new Student("Petrov", 50)
         );
@@ -49,7 +49,7 @@ public class StudentTest {
 
     @Test
     public void collectClassC() {
-        List<Student> classA = Student.collect(list, (x) -> x.getScore() < 50);
+        List<Student> classA = School.collect(list, (x) -> x.getScore() < 50);
         List<Student> expected = List.of(
                 new Student("Mihailov", 40)
         );
