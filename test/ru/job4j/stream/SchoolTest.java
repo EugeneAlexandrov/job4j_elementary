@@ -3,7 +3,10 @@ package ru.job4j.stream;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -54,5 +57,19 @@ public class SchoolTest {
                 new Student("Mihailov", 40)
         );
         assertEquals(classA, expected);
+    }
+
+    @Test
+    public void collectToMapTest() {
+        Map<String, Student> studentMap = list.stream()
+                .collect(Collectors.toMap(
+                        Student::getSurname,
+                        x -> x
+                ));
+        Map<String, Student> expected = new HashMap<>();
+        for (Student student : list) {
+            expected.put(student.getSurname(), student);
+        }
+        assertEquals(studentMap, expected);
     }
 }
