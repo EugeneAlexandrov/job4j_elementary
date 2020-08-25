@@ -3,6 +3,7 @@ package ru.job4j.collection;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -13,9 +14,12 @@ import static org.junit.Assert.*;
 public class UserTest {
     @Test
     public void whenAsc() {
-        Set<User> users = new TreeSet<>();
-        users.add(new User("Petr", 32));
-        users.add(new User("Ivan", 31));
+        Set<User> users = new TreeSet<>(
+                List.of(
+                        new User("Petr", 32),
+                        new User("Ivan", 31)
+                )
+        );
         Iterator<User> it = users.iterator();
         assertThat(it.next(), is(new User("Ivan", 31)));
         assertThat(it.next(), is(new User("Petr", 32)));
@@ -32,11 +36,14 @@ public class UserTest {
 
     @Test
     public void whenEqualName() {
-        Set<User> users = new TreeSet<>();
-        users.add(new User("Petr", 32));
-        users.add(new User("Ivan", 31));
-        users.add(new User("Petr", 35));
-        users.add(new User("Petr", 32));
+        Set<User> users = new TreeSet<>(
+                List.of(
+                        new User("Petr", 32),
+                        new User("Ivan", 31),
+                        new User("Petr", 35),
+                        new User("Petr", 32)
+                )
+        );
         Iterator<User> it = users.iterator();
         assertThat(it.next(), is(new User("Ivan", 31)));
         assertThat(it.next(), is(new User("Petr", 32)));
