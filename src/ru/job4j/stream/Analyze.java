@@ -20,9 +20,9 @@ public class Analyze {
 
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
         return stream.flatMap(s -> s.getSubjects().stream())
-                .collect(Collectors.groupingBy(Subject::getName, Collectors.summarizingInt(Subject::getScore)))
+                .collect(Collectors.groupingBy(Subject::getName, Collectors.averagingDouble(Subject::getScore)))
                 .entrySet().stream()
-                .map(m -> new Tuple(m.getKey(), m.getValue().getAverage()))
+                .map(m -> new Tuple(m.getKey(), m.getValue()))
                 .collect(Collectors.toList());
     }
 
